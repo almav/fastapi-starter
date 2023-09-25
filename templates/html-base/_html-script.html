@@ -1,0 +1,53 @@
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const delay = 1; // Delay de 5ms entre cada par de caracteres
+            const charGroup = 28; // Quantidade de caracteres para exibir de uma vez
+
+            const elements = Array.from(document.querySelectorAll('b'));
+            const originalColors = elements.map(b => getComputedStyle(b).color);
+
+            // Mostra todos os elementos <b> e altera a cor para preto
+            elements.forEach(b => {
+                b.style.color = 'black';
+                b.style.opacity = '1';
+            });
+
+            // FunÃ§Ã£o recursiva para processar cada elemento <b>
+            function processElement(index) {
+                if (index >= elements.length) {
+                    // Adicionar transiÃ§Ã£o antes de mudar a cor
+                    elements.forEach(b => {
+                        b.style.transition = "color 3s";
+                    });
+
+                    // Se todos os elementos <b> foram processados, inicie a transiÃ§Ã£o de cor
+                    elements.forEach((b, idx) => {
+                        setTimeout(() => {
+                            b.style.color = originalColors[idx];
+                        }, 100); // Inicia a transiÃ§Ã£o apÃ³s 500ms para dar uma pausa visÃ­vel
+                    });
+                    return;
+                }
+
+                const b = elements[index];
+                let text = b.textContent;
+                b.textContent = '';
+
+                // FunÃ§Ã£o para mostrar os caracteres em grupos
+                function showCharacter(i) {
+                    if (i < text.length) {
+                        b.textContent += text.substr(i, charGroup);
+                        // Muda a cor para branco a cada caractere exibido
+                        b.style.color = 'white';
+                        setTimeout(() => showCharacter(i + charGroup), delay);
+                    } else {
+                        processElement(index + 1);    // Processa o prÃ³ximo elemento
+                    }
+                }
+
+                showCharacter(0);
+            }
+
+            processElement(0);
+        });
+	</script>

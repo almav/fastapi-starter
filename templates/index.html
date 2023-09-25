@@ -1,0 +1,22 @@
+{% extends "html-base/_html-base.html" %}
+
+{% block custom_head %}
+    {% include "html-base/_html-head.html" %}
+    {% include "html-base/_html-style.html" %}
+  <style>
+    /* Custom CSS */
+  </style>
+{% endblock %}
+
+<!-- content -->
+{% block content %}
+    {% include "html-base/_html-content.html" %}
+{% endblock %}
+
+<!-- REQUIRED SCRIPTS -->
+{% block scripts %}
+    {% include "html-base/_html-script.html" %}
+    <script>
+        // Custom JavaScript
+    </script>
+{% endblock %}

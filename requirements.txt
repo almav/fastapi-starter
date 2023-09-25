@@ -1,0 +1,5 @@
+FastAPI
+gunicorn
+uvicorn
+Jinja2
+minify-html
