@@ -23,11 +23,10 @@ ROOT_PATH='/v1'
 
 Definir como: ```src.main:app```
 
-```src:``` É o diretório da sua aplicação.
-<br />
-```main:``` É o nome do módulo principal.<br />
-```app:``` É o objeto ou função principal.
+* ```src:``` É o diretório da sua aplicação.
+* ```main:``` É o nome do módulo principal.
+* ```app:``` É o objeto ou função principal.
 
 Exemplo: 
-<br />
+
 ```app = FastAPI(root_path=ROOT_PATH)```
