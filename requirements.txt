@@ -1,4 +1,5 @@
-FastAPI
+wheel
+FastAPI[all]
 gunicorn
 uvicorn
 Jinja2
