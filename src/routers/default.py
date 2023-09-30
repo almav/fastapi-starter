@@ -2,7 +2,7 @@ from fastapi import APIRouter, Request
 from fastapi.responses import FileResponse, PlainTextResponse, HTMLResponse
 from src.config.templates import Templates
 from src.utils.html_top import comment3 as html_top_comment
-from src.config.env import ROOT_PATH, RELEASE_CREATED_AT, RELEASE
+from src.config.env import ROOT_PATH, MODE, RELEASE_CREATED_AT, RELEASE
 from src.utils.get_ip import remote as get_ip_remote
 import minify_html
 
@@ -36,7 +36,7 @@ async def about(request: Request):
 
     ip = await get_ip_remote(request=request)
     r = {"detail": 
-            {"almav-API": f"release-{RELEASE}", "data": RELEASE_CREATED_AT, "ip": ip}
+            {"almav-API": f"release-{RELEASE}", "mode": MODE, "created": RELEASE_CREATED_AT, "ip": ip}
     }
 
     return r

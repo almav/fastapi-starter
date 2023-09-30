@@ -30,3 +30,6 @@ Definir como: ```src.main:app```
 Exemplo: 
 
 ```app = FastAPI(root_path=ROOT_PATH)```
+
+## Test
+```uvicorn src.main:app --reload```
