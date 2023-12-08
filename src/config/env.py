@@ -12,5 +12,7 @@ ROOT_PATH = config_instance('ROOT_PATH', default=os.environ.get('ROOT_PATH', '/'
 MODE = config_instance('MODE', default=os.environ.get('MODE', 'development'))
 
 # Version
-RELEASE='v0.0.1-beta'
-RELEASE_CREATED_AT='2023-09-20'
+RELEASE = config_instance('RELEASE', default=os.environ.get('RELEASE', 'v0.0.1-beta'))
+RELEASE_CREATED_AT = config_instance('RELEASE_CREATED_AT', default=os.environ.get('RELEASE_CREATED_AT', '2023-12-07'))
+TITLE = config_instance('TITLE', default=os.environ.get('TITLE', 'almav'))
+DESCRIPTION = config_instance('DESCRIPTION', default=os.environ.get('DESCRIPTION', 'FastAPI Nginx VHOST'))
