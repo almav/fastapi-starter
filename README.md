@@ -33,3 +33,12 @@ Exemplo:
 
 ## Test
 ```uvicorn src.main:app --reload```
+
+## Deploy
+```shell
+su stageApiLogin_almav
+# pull github
+git pull origin main
+# se necessário, reinicie o serviço
+sudo /usr/bin/systemctl restart stage.api.login.almav.com-r1.service
+```
